@@ -1,0 +1,113 @@
+{
+  "title": "WarcraftStats",
+  "description": null,
+  "hero": {
+    "title": "Warcraft Stats",
+    "description": "Track all the latest stats and updates, and gain meaningful insights into the next expansion of World of Warcraft - The War Within."
+  },
+  "features": [
+    {
+      "title": "Mythic Plus",
+      "description": "View mythic plus class distribution for The War Within expansion.",
+      "icon": "i-streamline-interface-content-fire-lit-flame-torch-trending",
+      "to": "mplus"
+    },
+    {
+      "title": "Overall",
+      "description": "View raid statistics for all bosses in Nerub'ar Palace in The War Within expansion.",
+      "icon": "i-streamline-mail-smiley-happy-face-chat-message-smiley-smile-emoji-face-satisfied",
+      "to": "raid"
+    },
+    {
+      "title": "Cooldowns",
+      "description": "Extract healer cooldowns for all bosses in Nerub'ar Palace in The War Within expansion using a warcraftlog report.",
+      "icon": "i-heroicons-star-solid",
+      "to": "cooldowns"
+    }
+  ],
+  "testimonials": {
+    "headline": "Testimonials",
+    "title": "What our customers are saying.",
+    "description": "Proident sunt exercitation minim laborum enim laboris labore esse.",
+    "items": [
+      {
+        "quote": "Nostrud tempor sunt fugiat. Dolor in sint dolore labore non occaecat adipisicing Lorem labore ullamco enim excepteur. In fugiat Lorem sit velit id veniam esse eiusmod non ea voluptate cupidatat reprehenderit ullamco dolore. Mollit laborum occaecat aliquip.",
+        "author": {
+          "name": "Rose Roberson",
+          "description": "CEO at Company",
+          "avatar": {
+            "src": "https://i.pravatar.cc/120?img=1",
+            "loading": "lazy"
+          }
+        }
+      },
+      {
+        "quote": "Eiusmod dolor aute ut nulla pariatur officia consequat aute amet exercitation.",
+        "author": {
+          "name": "Chace Rodgers",
+          "description": "CEO at Company",
+          "avatar": {
+            "src": "https://i.pravatar.cc/120?img=7",
+            "loading": "lazy"
+          }
+        }
+      },
+      {
+        "quote": "Id duis velit enim officia ad nisi incididunt magna ex dolor minim deserunt dolor. Esse incididunt cillum nostrud esse do quis amet labore amet nulla eiusmod amet nulla Lorem. Incididunt ex voluptate irure officia laboris ea proident est qui.",
+        "author": {
+          "name": "Cornelius Sheppard",
+          "description": "CEO at Company",
+          "avatar": {
+            "src": "https://i.pravatar.cc/120?img=3",
+            "loading": "lazy"
+          }
+        }
+      },
+      {
+        "quote": "Velit consectetur in adipisicing culpa eiusmod commodo eu ex dolore. Officia irure nisi dolor dolore velit fugiat. Aliqua sint aliqua aute elit eu sunt.",
+        "author": {
+          "name": "Destinee Woods",
+          "description": "CEO at Company",
+          "avatar": {
+            "src": "https://i.pravatar.cc/120?img=5",
+            "loading": "lazy"
+          }
+        }
+      },
+      {
+        "quote": "Proident quis deserunt qui ex exercitation veniam id Lorem est cupidatat ipsum irure aliquip ad.",
+        "author": {
+          "name": "Kaleb Mccormick",
+          "description": "CEO at Company",
+          "avatar": {
+            "src": "https://i.pravatar.cc/120?img=8",
+            "loading": "lazy"
+          }
+        }
+      },
+      {
+        "quote": "Magna officia quis ea ea in officia non voluptate ipsum culpa do labore sunt. Aute est dolore commodo sint officia ad laboris dolor magna aliquip exercitation tempor commodo.",
+        "author": {
+          "name": "Jazmin Mccall",
+          "description": "CEO at Company",
+          "avatar": {
+            "src": "https://i.pravatar.cc/120?img=9",
+            "loading": "lazy"
+          }
+        }
+      }
+    ]
+  },
+  "cta": {
+    "title": "Get started today",
+    "description": "Nisi mollit id aliquip sunt est laborum sit sit.",
+    "links": [
+      {
+        "label": "Buy now",
+        "size": "xl",
+        "color": "black",
+        "to": "/pricing"
+      }
+    ]
+  }
+}
