@@ -27,23 +27,21 @@ jobs:
 
     env:
       NUXT_UI_PRO_LICENSE: ${{ secrets.NUXT_UI }}
-      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-      SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          version: 9
+          bun-version: latest
 
-      - name: Install node
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node }}
-          cache: pnpm
+      # - name: Install node
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: ${{ matrix.node }}
+      #     cache: pnpm
 
       - name: Filter changes
         uses: dorny/paths-filter@v3
@@ -66,10 +64,10 @@ jobs:
               - 'pnpm-lock.yaml'
 
       - name: Install dependencies
-        run: pnpm install
+        run: bun install
 
       - name: Build
-        run: pnpm run generate
+        run: bun run generate
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
