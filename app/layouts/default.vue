@@ -24,7 +24,7 @@
 
 .landing-grid {
   background-size: cover;
-  background: url('../../public/background.jpg') no-repeat left bottom, linear-gradient(to right,
+  background: no-repeat left bottom, linear-gradient(to right,
       rgb(var(--color-gray-200)) 1px,
       transparent 1px),
     linear-gradient(to bottom, rgb(var(--color-gray-200)) 1px, transparent 1px);
@@ -33,7 +33,7 @@
 .dark {
   .landing-grid {
     background-size: cover;
-    background: url('../../public/background.jpg') no-repeat left bottom, linear-gradient(to right,
+    background: no-repeat left bottom, linear-gradient(to right,
         rgb(var(--color-gray-800)) 1px,
         transparent 1px),
       linear-gradient(to bottom,
