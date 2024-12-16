@@ -147,11 +147,5 @@ export default defineNuxtConfig({
     payloadExtraction: false,
   },
 
-  nitro: {
-    externals: {
-      inline: ['uuid'],
-    },
-  },
-
   compatibilityDate: '2024-07-11',
 })
