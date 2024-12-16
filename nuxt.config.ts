@@ -90,16 +90,12 @@ export default defineNuxtConfig({
 
   site: {
     // production URL
-    url: 'https://example.com',
+    url: 'https://robinsone.github.io/mass-guid-converter/',
   },
 
   ui: {
     icons: ['heroicons', 'simple-icons', 'streamline', 'ep'],
     safelistColors: ['primary', 'red', 'orange', 'green'],
-  },
-
-  colorMode: {
-    disableTransition: true,
   },
 
   router: {
