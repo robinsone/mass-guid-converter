@@ -49,38 +49,35 @@
 </template>
 
 <script setup>
-import { v4 as uuidv4, validate as uuidValidate } from 'uuid'
-import { Buffer } from 'buffer'
+import { Buffer } from 'buffer';
 
-const toast = useToast()
+const toast = useToast();
 
-const input = ref('')
-const result = ref('')
-const generateAmount = ref(10)
-const convertType = ref('Auto')
-const AsUpperCase = ref(false)
+const input = ref('');
+const result = ref('');
+const generateAmount = ref(10);
+const convertType = ref('Auto');
+const AsUpperCase = ref(false);
 
 watch(AsUpperCase, (newValue) => {
   result.value = newValue ? result.value.toUpperCase() : result.value.toLowerCase();
 });
 
 const generate = () => {
-
-  let ids = []
+  let ids = [];
   for (let i = 0; i < generateAmount.value; i++) {
-    ids.push(uuidv4())
+    ids.push(crypto.randomUUID());
   }
 
-  result.value = ids.join(',\n')
-
-  result.value = AsUpperCase.value ? result.value.toUpperCase() : result.value.toLowerCase()
-}
+  result.value = ids.join(',\n');
+  result.value = AsUpperCase.value ? result.value.toUpperCase() : result.value.toLowerCase();
+};
 
 const parseUUIDs = (inputString) => {
   const parts = inputString.split(/[\s,]+/); // Split by comma or whitespace
-  const validUUIDs = parts.filter(part => uuidValidate(part));
+  const validUUIDs = parts.filter(part => validateUUID(part));
   return validUUIDs;
-}
+};
 
 const parseHexStrings = (inputString) => {
   const parts = inputString.split(/[\s,]+/); // Split by comma or whitespace
@@ -105,20 +102,20 @@ const convert = () => {
       break;
   }
 
-  result.value = AsUpperCase.value ? result.value.toUpperCase() : result.value.toLowerCase()
-}
+  result.value = AsUpperCase.value ? result.value.toUpperCase() : result.value.toLowerCase();
+};
 
 const convertToGUID = () => {
   const hexStrings = parseHexStrings(input.value);
   const guids = hexStrings.map(hexToUUID).join(',\n');
   result.value = guids;
-}
+};
 
 const convertToHex = () => {
   const uuids = parseUUIDs(input.value);
   const hexStrings = uuids.map(uuidToOracleRaw).join(',\n');
   result.value = hexStrings;
-}
+};
 
 const uuidToOracleRaw = (uuid) => {
   const hex = uuid.replace(/-/g, '');
@@ -133,7 +130,7 @@ const uuidToOracleRaw = (uuid) => {
     bytes[10], bytes[11], bytes[12], bytes[13], bytes[14], bytes[15] // node
   ]);
 
-  return reordered.toString('hex');
+  return reordered.toString('hex').toUpperCase();
 };
 
 const hexToUUID = (hex) => {
@@ -152,9 +149,14 @@ const hexToUUID = (hex) => {
     bytes[10], bytes[11], bytes[12], bytes[13], bytes[14], bytes[15] // node
   ]);
 
-  const reorderedHex = reordered.toString('hex');
+  const reorderedHex = reordered.toString('hex').toUpperCase();
 
-  return `${reorderedHex.substring(0, 8)}-${reorderedHex.substring(8, 12)}-${reorderedHex.substring(12, 16)}-${reorderedHex.substring(16, 20)}-${reorderedHex.substring(20, 32)}`;
+  return `${reorderedHex.substring(0, 8)}-${reorderedHex.substring(8, 4)}-${reorderedHex.substr(12, 4)}-${reorderedHex.substr(16, 4)}-${reorderedHex.substr(20, 12)}`;
+};
+
+const validateUUID = (uuid) => {
+  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  return uuidRegex.test(uuid);
 };
 
 const copyToClipboard = () => {
