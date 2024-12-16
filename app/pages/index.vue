@@ -1,46 +1,26 @@
 <script setup lang="ts">
-import page from '../json/siteInfo.json'
 
 useSeoMeta({
-  titleTemplate: 'WarcraftStats',
-  title: page.title,
-  ogTitle: page.title,
-  description: page.description,
-  ogDescription: page.description,
+  titleTemplate: 'Mass GUID Converter',
+  title: 'Mass GUID Converter',
+  ogTitle: 'Mass GUID Converter',
+  description: 'Mass GUID Converter',
+  ogDescription: 'Mass GUID Converter',
 })
 </script>
 
 <template>
-  <div v-if="page">
+  <div>
 
-    <ULandingHero
-      :description="page.hero.description"
-      :ui="{ container: 'py-0 my-0' }"
-    >
-      <template #title>
-        <span class="dark:text-primary-400 text-primary-500" v-html="page.hero.title" />
-      </template>
-    </ULandingHero>
+    <UContainer class="py-12 text-center mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl gap-16 sm:gap-y-24 flex flex-col my-0">
+      <div class="dark:text-primary-400 text-primary-500 text-2xl md:text-6xl xs:text-2xl sm:text-4xl font-black">
+        Mass GUID Converter
+      </div>
+    </UContainer>
 
-    <ULandingSection
-      :ui="{ wrapper: 'sm:py-0 py-0', description: 'mt-0' }"
-    >
-      <UPageGrid>
-        <ULandingCard
-          v-for="(item, index) in page.features" :key="index"
-          v-bind="item"
-        />
-      </UPageGrid>
-    </ULandingSection>
+    <UContainer>
+      <Converter />
+    </UContainer>
 
-    <ULandingSection class="text-center">
-      <p>
-        If you wan't to see version 1 visit <UButton to="https://cooldowns-v1.erobinson.ca/">
-          cooldowns-v1
-        </UButton>
-      </p>
-    </ULandingSection>
   </div>
 </template>
-
-

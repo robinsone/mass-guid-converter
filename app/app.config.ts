@@ -1,6 +1,6 @@
 export default defineAppConfig({
   ui: {
-    primary: 'purple',
+    primary: 'emerald',
     gray: 'neutral',
     tooltip: {
       default: {
