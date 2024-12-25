@@ -109,12 +109,6 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
 
-  stripe: {
-    client: {
-      key: '',
-    },
-  },
-
   eslint: {
     config: {
       stylistic: true,
