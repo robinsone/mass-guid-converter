@@ -4,9 +4,8 @@ export default defineNuxtConfig({
   target: 'static',
   ssr: false,
 
-  modules: [
-    '@nuxt/fonts', '@nuxt/image', '@nuxt/ui', '@pinia/nuxt', // 'nuxt-og-image',
-    '@nuxthq/studio', '@vueuse/nuxt', '@nuxt/eslint', "nuxt-gtag", "@vite-pwa/nuxt"],
+  modules: ['@nuxt/fonts', '@nuxt/image', // 'nuxt-og-image',
+  '@nuxt/ui', '@pinia/nuxt', '@nuxthq/studio', '@vueuse/nuxt', '@nuxt/eslint', "nuxt-gtag", "@vite-pwa/nuxt", '@nuxtjs/sitemap', '@nuxtjs/robots'],
 
   imports: {
     dirs: ['types/*.ts', 'store/*.ts', 'types/**/*.ts'],
