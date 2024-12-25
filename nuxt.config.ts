@@ -1,9 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
+  target: 'static',
   ssr: false,
 
-  modules: [// '@nuxt/content',
+  modules: [
     '@nuxt/fonts', '@nuxt/image', '@nuxt/ui', '@pinia/nuxt', // 'nuxt-og-image',
     '@nuxthq/studio', '@vueuse/nuxt', '@nuxt/eslint', "nuxt-gtag", "@vite-pwa/nuxt"],
 
