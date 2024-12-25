@@ -5,7 +5,7 @@ export default defineNuxtConfig({
 
   modules: [// '@nuxt/content',
     '@nuxt/fonts', '@nuxt/image', '@nuxt/ui', '@pinia/nuxt', // 'nuxt-og-image',
-    '@nuxthq/studio', '@vueuse/nuxt', '@unlok-co/nuxt-stripe', '@nuxt/eslint', "nuxt-gtag", "@vite-pwa/nuxt"],
+    '@nuxthq/studio', '@vueuse/nuxt', '@nuxt/eslint', "nuxt-gtag", "@vite-pwa/nuxt"],
 
   imports: {
     dirs: ['types/*.ts', 'store/*.ts', 'types/**/*.ts'],
