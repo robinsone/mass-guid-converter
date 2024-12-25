@@ -39,7 +39,5 @@ useSeoMeta({
     <NuxtLayout name="default">
       <NuxtPage />
     </NuxtLayout>
-    <UNotifications />
-    <UModals />
   </div>
 </template>
