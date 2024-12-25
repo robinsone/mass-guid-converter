@@ -29,11 +29,16 @@ export default defineNuxtConfig({
   pwa: {
     /* PWA options */
     manifest: {
-      name: 'WarcraftStats',
-      short_name: 'WowStats',
-      description: 'World of Warcraft statistics and tools',
+      name: 'Mass Guid Converter',
+      short_name: 'Guid Converter',
+      description: 'Converts and generates GUIDs and UUIDs allows you to convert between different formats.',
       theme_color: '#bfdbfe',
       icons: [
+        {
+          src: 'icons/1024.png',
+          sizes: '1024x1024',
+          type: 'image/png'
+        },
         {
           src: 'icons/512.png',
           sizes: '512x512',
@@ -57,19 +62,9 @@ export default defineNuxtConfig({
       ],
       screenshots: [
         {
-          src: 'screenshots/1.jpg',
+          src: 'screenshots/1.png',
           sizes: '1080x1920',
-          type: 'image/jpg'
-        },
-        {
-          src: 'screenshots/2.jpg',
-          sizes: '1080x1920',
-          type: 'image/jpg'
-        },
-        {
-          src: 'screenshots/3.jpg',
-          sizes: '1080x1920',
-          type: 'image/jpg'
+          type: 'image/png'
         },
         {
           src: 'screenshots/wide.png',

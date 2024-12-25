@@ -17,8 +17,8 @@ useHead({
   },
 })
 
-const title = 'WarcraftStats'
-const description = 'Track all the latest stats and updates, and gain meaningful insights into the next expansion of World of Warcraft - The War Within.'
+const title = 'Mass GUID Converter'
+const description = 'Converts and generates GUIDs and UUIDs allows you to convert between different formats.'
 
 useSeoMeta({
   title,
