@@ -60,7 +60,13 @@ const convertType = ref('Auto');
 const AsUpperCase = ref(false);
 
 watch(AsUpperCase, (newValue) => {
-  result.value = newValue ? result.value.toUpperCase() : result.value.toLowerCase();
+  if (newValue) {
+    input.value = input.value.toUpperCase();
+    result.value = result.value.toUpperCase();
+  } else {
+    input.value = input.value.toLowerCase();
+    result.value = result.value.toLowerCase();
+  }
 });
 
 const generate = () => {
@@ -107,12 +113,24 @@ const convert = () => {
 
 const convertToGUID = () => {
   const hexStrings = parseHexStrings(input.value);
+
+  if (hexStrings.length === 0) {
+    result.value = input.value;
+    return;
+  }
+
   const guids = hexStrings.map(hexToUUID).join(',\n');
   result.value = guids;
 };
 
 const convertToHex = () => {
   const uuids = parseUUIDs(input.value);
+
+  if (uuids.length === 0) {
+    result.value = input.value;
+    return;
+  }
+
   const hexStrings = uuids.map(uuidToOracleRaw).join(',\n');
   result.value = hexStrings;
 };
