@@ -18,13 +18,6 @@ useHead({
   ],
 })
 
-useSeoMeta({
-  titleTemplate: 'Mass GUID Converter',
-  title: 'Mass GUID Converter',
-  ogTitle: 'Mass GUID Converter',
-  description: 'Mass GUID Converter',
-  ogDescription: 'Mass GUID Converter',
-})
 </script>
 
 <template>
@@ -33,7 +26,7 @@ useSeoMeta({
     <UContainer class="py-12 text-center mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex flex-col my-0">
       <img src="~/public/icons/512.png" alt="Mass GUID Converter" class="w-32 h-32 sm:w-72 sm:h-72 mx-auto" />
       <div class="dark:text-primary-400 text-primary-500 text-2xl md:text-6xl xs:text-2xl sm:text-4xl font-black">
-        <h1>Mass GUID Converter</h1>
+        <h1>GUID to HEX converter</h1>
       </div>
       <Converter class="pt-4" />
       <div class="grid grid-cols-1 sm:grid-cols-2 py-12 text-justify text-md md:text-lg gap-12">

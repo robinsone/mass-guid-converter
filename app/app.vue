@@ -10,6 +10,7 @@ useHead({
     { key: 'theme-color', name: 'theme-color', content: color },
     { hid: 'description', name: 'description', content: 'Convert GUIDs to Oracle RAW(16) format with ease.' },
   ],
+
   link: [
     { rel: 'icon', href: '/favicon.ico' },
   ],
@@ -18,8 +19,8 @@ useHead({
   },
 })
 
-const title = 'Mass GUID Converter'
-const description = 'Converts and generates GUIDs and UUIDs allows you to convert between different formats.'
+const title = 'Mass GUID to HEX Converter – Oracle, SQL, and .NET Format Support'
+const description = 'Convert GUIDs to HEX for Oracle databases and back. Generate and transform multiple GUIDs with byte order options and mass conversion tools.'
 
 useSeoMeta({
   title,
@@ -27,6 +28,8 @@ useSeoMeta({
   ogTitle: title,
   ogDescription: description,
   ogImage: '',
+  ogUrl: 'https://guid.erobinson.ca',
+  ogType: 'website',
   twitterImage: '',
   twitterCard: 'summary_large_image',
 })
