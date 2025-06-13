@@ -1,19 +1,31 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  extends: ['@nuxt/ui-pro'],
-  target: 'static',
-  ssr: false,
+  ssr: true,
+  modules: ['@nuxt/eslint', '@nuxt/ui-pro', '@vite-pwa/nuxt', 'nuxt-gtag'],
 
-  modules: ['@nuxt/fonts', '@nuxt/image', // 'nuxt-og-image',
-  '@nuxt/ui', '@pinia/nuxt', '@nuxthq/studio', '@vueuse/nuxt', '@nuxt/eslint', "nuxt-gtag", "@vite-pwa/nuxt", '@nuxtjs/sitemap', '@nuxtjs/robots'],
-
-  imports: {
-    dirs: ['types/*.ts', 'store/*.ts', 'types/**/*.ts'],
+  devtools: {
+    enabled: true
   },
 
-  hooks: {
-    'prerender:routes' ({ routes }) {
-      routes.clear() // Do not generate any routes (except the defaults)
+  css: ['~/assets/css/main.css'],
+
+  routeRules: {
+    '/': { prerender: true },
+    '/index.html': { prerender: true },
+  },
+
+  future: {
+    compatibilityVersion: 4
+  },
+
+  compatibilityDate: '2025-01-15',
+
+  eslint: {
+    config: {
+      stylistic: {
+        commaDangle: 'never',
+        braceStyle: '1tbs'
+      }
     }
   },
 
@@ -23,6 +35,8 @@ export default defineNuxtConfig({
 
   pwa: {
     /* PWA options */
+    strategies: 'generateSW',
+    registerType: 'autoUpdate',
     manifest: {
       name: 'Mass Guid Converter',
       short_name: 'Guid Converter',
@@ -70,55 +84,14 @@ export default defineNuxtConfig({
       ]
     },
     workbox: {
-      navigateFallback: '/index.html',
+      globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
     },
     devOptions: {
       enabled: true,
-      type: 'module'
+      suppressWarnings: true,
+      navigateFallback: '/',
+      navigateFallbackAllowlist: [/^\/$/],
+      type: 'module',
     },
   },
-
-  site: {
-    // production URL
-    url: 'https://robinsone.github.io/mass-guid-converter/',
-  },
-
-  ui: {
-    icons: ['heroicons', 'simple-icons', 'streamline', 'ep'],
-    safelistColors: ['primary', 'red', 'orange', 'green'],
-  },
-
-  router: {
-    base: '/',
-  },
-
-  routeRules: {
-    // Temporary workaround for prerender regression. see https://github.com/nuxt/nuxt/issues/27490
-    '/': { prerender: true },
-    '/index.html': { prerender: true },
-  },
-
-  devtools: {
-    enabled: true,
-  },
-
-  typescript: {
-    strict: false,
-  },
-
-  future: {
-    compatibilityVersion: 4,
-  },
-
-  eslint: {
-    config: {
-      stylistic: true,
-    },
-  },
-
-  experimental: {
-    payloadExtraction: false,
-  },
-
-  compatibilityDate: '2024-07-11',
 })

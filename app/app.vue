@@ -1,22 +1,14 @@
-<script setup lang="ts">
-const colorMode = useColorMode()
-
-const color = computed(() => colorMode.value === 'dark' ? '#111827' : 'white')
-
+<script setup>
 useHead({
   meta: [
-    { charset: 'utf-8' },
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    { key: 'theme-color', name: 'theme-color', content: color },
-    { hid: 'description', name: 'description', content: 'Convert GUIDs to Oracle RAW(16) format with ease.' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' }
   ],
-
   link: [
-    { rel: 'icon', href: '/favicon.ico' },
+    { rel: 'icon', href: '/favicon.ico' }
   ],
   htmlAttrs: {
-    lang: 'en',
-  },
+    lang: 'en'
+  }
 })
 
 const title = 'Mass GUID to HEX Converter – Oracle, SQL, and .NET Format Support'
@@ -33,16 +25,16 @@ useSeoMeta({
   twitterImage: '',
   twitterCard: 'summary_large_image',
 })
+
+
 </script>
 
 <template>
-  <div>
-    <VitePwaManifest />
+  <UApp>
     <NuxtLoadingIndicator />
 
     <NuxtLayout name="default">
       <NuxtPage />
     </NuxtLayout>
-    <UNotifications />
-  </div>
+  </UApp>
 </template>

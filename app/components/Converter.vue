@@ -1,18 +1,18 @@
 <template>
   <div>
-    <UTextarea autoresize color="gray" v-model="input" variant="outline" placeholder="Enter GUID(s) or HEX(s)..."
+    <UTextarea autoresize color="gray" v-model="input" variant="subtle" placeholder="Enter GUID(s) or HEX(s)..."
       class="w-full mb-2" />
     <div class="flex flex-wrap gap-2 mb-2">
       <div>
         <UButtonGroup size="sm" orientation="horizontal">
           <UButton label="Convert" color="primary" @click="convert" />
-          <USelectMenu color="primary" :options="['Auto', 'GUID', 'Hex']" v-model="convertType" />
+          <USelectMenu color="primary" :items="['Auto', 'GUID', 'Hex']" v-model="convertType" />
         </UButtonGroup>
       </div>
       <div>
         <UButtonGroup size="sm" orientation="horizontal">
-          <UButton label="Generate" color="white" @click="generate" />
-          <USelectMenu color="gray" :options="['1', '5', '10']" v-model="generateAmount" />
+          <UButton label="Generate" @click="generate" />
+          <USelectMenu color="gray" :items="['1', '5', '10']" v-model="generateAmount" />
         </UButtonGroup>
       </div>
       <div class="sm:ml-auto mt-1 mr-1">
@@ -35,12 +35,12 @@
         </template>
 
         <code class="text-sm sm:text-base inline-flex text-left items-center rounded-lg w-full">
-  <span class="flex">
-    <span class="flex-1 whitespace-pre-line">
-      {{ result }}
-    </span>
-  </span>
-</code>
+          <span class="flex">
+            <span class="flex-1 whitespace-pre-line">
+              {{ result }}
+            </span>
+          </span>
+        </code>
 
 
       </UCard>
@@ -52,7 +52,6 @@
 import { Buffer } from 'buffer';
 
 const toast = useToast();
-
 const input = ref('');
 const result = ref('');
 const generateAmount = ref(10);
@@ -78,6 +77,10 @@ const generate = () => {
   result.value = ids.join(',\n');
   result.value = AsUpperCase.value ? result.value.toUpperCase() : result.value.toLowerCase();
 };
+
+const generateInput = () => {
+  return crypto.randomUUID()
+}
 
 const parseUUIDs = (inputString) => {
   const parts = inputString.split(/[\s,]+/); // Split by comma or whitespace
@@ -183,6 +186,7 @@ const copyToClipboard = () => {
   toast.add({ title: 'Copied', icon: 'i-heroicons-check-circle' })
 
 }
+
 
 </script>
 

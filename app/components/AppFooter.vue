@@ -18,7 +18,7 @@
         target="_blank"
         icon="i-simple-icons-github"
         aria-label="GitHub"
-        color="gray"
+        color="neutral"
         variant="ghost"
       />
     </template>
